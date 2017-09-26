@@ -1,0 +1,177 @@
+html {
+  font-family: 'Andika', monospace;
+}
+header {
+  background: url("../images/etc/kp-logo.png") center center/contain no-repeat;
+  background-size: 60%;
+  display: block;
+  height: 0;
+  margin: 0 auto;
+  padding: 0 0 19.13946588%;
+  transition: all .25s ease;
+}
+
+.hero{
+  -ms-flex-align:center;
+  align-items:center;
+  background-color:#5baddd;
+  display:-ms-flexbox;
+  display:flex;
+  height:22.5rem;
+  min-height: 100vh;
+  text-align: center;
+  padding: 10em 0 3em;
+}
+
+header > div {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top:60vh;
+  left: 0;
+  right: 0;
+  padding: 2em;
+  text-align:center;
+  color:white;
+  font-family: 'Andika', monospace;
+  font-weight: bold;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F94A4B;
+}
+
+
+@media screen and (max-width: 600px) {
+  h1.main {
+    width: 90%; 
+  } 
+}
+
+/* panel styles */
+
+.panel {
+  /* min height incase content is higher than window height */
+  min-height: 100vh;
+  text-align: center;
+  padding: 10em 0 3em;
+}
+
+@media (max-width: 480px) {
+  /* This is how it looks on mobile */
+  navigation {
+    display: none;
+  }
+  .panel {
+    min-height: 100vh;
+    text-align: center;
+    padding: 2em 0 2em;
+  }
+}
+
+.hero .hero-building-blocks{
+  background-color:#085a78;
+  background-size:cover;
+  color:#fff;
+}
+.hero-flex{
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  width:100%;
+}
+.hero-content{
+  -webkit-align-self:center;
+  -ms-flex-item-align:center;
+  -ms-grid-row-align:center;
+  align-self:center;
+  -ms-flex:4 1 0%;
+  flex:4 1 0%;
+  text-align:left;
+}
+@media screen and (max-width:63.9375em){
+  .hero-content{
+    text-align:center;
+  }
+}
+.hero-img{
+  -ms-flex:3 1 0%;
+  flex:3 1 0%;
+  padding-left:100px;
+}
+@media screen and (max-width:63.9375em){
+  .hero-img{
+    display:none
+  }
+}
+.hero-header{
+  font-size:2.9375rem;
+  font-weight:600;
+  line-height:3.125rem
+}
+@media screen and (max-width:63.9375em){
+  .hero-header{
+    font-size:1.875rem;line-height:2.1875rem
+  }
+}
+.hero-subheader{
+  font-size:1.125rem;
+  margin-bottom:1.5rem
+}
+
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license
+Copyright (c) 2013 Daniel Eden
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
