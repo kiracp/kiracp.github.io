@@ -1,5 +1,40 @@
 html {
+  
+}
+body {
+  background-color: #5baddd;
   font-family: 'Andika', monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Germania One', cursive;
+  color: #F94A4B;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #5baddd;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+nav ul a {
+  color:white;
+  padding: 1rem 1.5rem;
+  display: block;
+  transition: all .25s ease-in-out;
+}
+nav ul li img {
+  width: 60%;
+  display: block;
+  padding: 1rem 1.5rem;
+  transition: all .25s ease;
 }
 header {
   background: url("../images/etc/kp-logo.png") center center/contain no-repeat;
@@ -7,7 +42,7 @@ header {
   display: block;
   height: 0;
   margin: 0 auto;
-  padding: 0 0 19.13946588%;
+  padding: 0 0 15%;
   transition: all .25s ease;
 }
 
@@ -18,9 +53,9 @@ header {
   display:-ms-flexbox;
   display:flex;
   height:22.5rem;
-  min-height: 100vh;
+  min-height: 95vh;
   text-align: center;
-  padding: 10em 0 3em;
+  padding: 6em 0 3em;
 }
 
 header > div {
@@ -38,14 +73,28 @@ header > div {
 }
 
 a {
-  color: white;
+  color: #5baddd;
   text-decoration: none;
+  font-weight:bold;
 }
 
 a:hover {
   color: #F94A4B;
 }
-
+.text-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+section {
+  padding: 8em 1em;
+  border-bottom: 1px solid #ccc;
+}
+.white {
+  background-color:#ffffff;
+}
+.gray {
+  background-color:#ededed;
+}
 
 @media screen and (max-width: 600px) {
   h1.main {

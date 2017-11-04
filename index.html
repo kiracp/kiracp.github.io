@@ -10,6 +10,35 @@
 
       gtag('config', 'UA-69840407-3');
     </script>
+    <script>
+      function randomH1() {
+        var colors = ["#F94A4B","#5baddd","#1bb996"]
+        var h1 = document.getElementsByTagName("h1");
+        console.log(h1 + h1.length);
+        h1.forEach(function(ele) {
+            ele.style.color = "#ff0000";
+          }
+        );
+      }
+      window.onload = randomH1();
+    </script>
+    <script>
+    function init() {
+      window.addEventListener('scroll', function(e){
+          var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 300,
+            header = document.querySelector("header");
+          if (distanceY > shrinkOn) {
+            classie.add(header,"smaller");
+          } else {
+              if (classie.has(header,"smaller")) {
+                  classie.remove(header,"smaller");
+              }
+          }
+      });
+    }
+      window.onload = init();
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +46,44 @@
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
+
   </head>
   <body>
+    <nav>
+      <ul>
+        <!--<li><img src="./images/etc/kp-logo.png" alt="Kira Prentice logo" />-->
+        <li><a>work</a></li>
+        <li><a>about</a></li>
+        <li><a>blog</a></li>
+      </ul>
+    </nav>
+
     <header class="hero">
-      <div>
+
+    </header>
+    <section class="white">
+      <div class="text-content">
+        <h1>What's in a website?</h1>
+        <p> Here's a little paragraph about what I am and what I do. I put it here because I want to introduce the content that you'll see below. Sorry if it seems too grandious. I'm doing what I can.</p>
+      </div>
+    </section>
+    <section class="white">
+      <div class="text-content">
+        <h1>Flawless Hacks</h1>
+        <p><a href="flawlesshacks.com">Flawless Hacks</a> in nonprofit that has hosts an annual Beyoncé-themed hackathon for women in New York City. We have brought together more than 400 technical women for a day of keynote speakers, beginner- to advanced-level workshops and mentorship. Most exciting, almost half of Flawless Hacks attendees are at their first hackathon. </p>
+        <p>Outside of the annual event, the Flawless Hacks team attends technical conferences and holds workshops about hackathon organizing. I co-founded the 501c3-status nonprofit in 2016 with <a href="https://twitter.com/kaitlingu">Kaitlin Gu</a>.</p>
+        <p> To learn more about Flawless Hacks, visit our <a href="flawlesshacks.com">website</a> or <a href="https://www.facebook.com/flawlesshacks">facebook</a> page. And we'll see you there in April 2018!</p>
+      </div>
+    </section>
+
+    <!--
+          <div>
         <p>site under construction.</p>
         <p><a href="https://twitter.com/classickira">twitter</a> | <a href="https://www.linkedin.com/in/kira-prentice-75369a6b">linkedin</a> | <a href="https://github.com/kiracp">github</a> | <a href="https://upload.wikimedia.org/wikipedia/commons/4/4e/Macaca_nigra_self-portrait_large.jpg">my face</a></p>
       </div>
-    </header>
+    -->
+
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/app.js"></script>
