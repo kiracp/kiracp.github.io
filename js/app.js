@@ -1,32 +1,10 @@
-$(window).scroll(function() {
-  var $window = $(window),
-    $body = $('body'),
-    $panel = $('.panel');
-
-  var scroll = $window.scrollTop() + ($window.height() / 3);
-  var height = $(window).scrollTop();
-
-  if (height > 280) {
-    $('.crown').css({"visibility": "visible"}).addClass('animated fadeInUp');
+function randomH1() {
+  // Set h1 colors in order
+  var colors = ["#F94A4B","#1bb996","#5baddd","#d6b943"];
+  var h1 = document.getElementsByTagName("h1");
+  var h1array = Array.prototype.slice.call(h1); 
+  for (i=0; i<h1array.length;i++) {
+    h1array[i].style.color = colors[i%colors.length];
   }
-
-  if (height > 1190) {
-    $('.praise').css({"visibility": "visible"}).addClass('animated fadeInUp');
-  }
-
-  if (height > 2300) {
-    $('.ring').css({"visibility": "visible"}).addClass('animated fadeInUp');
-  }
-
-  $panel.each(function() {
-    var $this = $(this);
-
-    if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
-      $body.removeClass(function(index, css) {
-        return (css.match(/(^|\s)color-\S+/g) || []).join(' ');
-      });
-
-      $body.addClass('color-' + $(this).data('color'));
-    }
-  });
-}).scroll();
+}
+document.ready = randomH1();
