@@ -1,4 +1,5 @@
 body {
+  margin: 0px 20px;
   background-color: #5baddd;
   font-family: 'Andika', monospace;
 }
@@ -83,4 +84,35 @@ section {
   header {
     background-size: 90%;
   }
+}
+
+/* Modal */
+.modal p {
+  font-size: 13px;
+}
+.modal h1, h2, h3, h4, h5, h6 { 
+  font-family: 'Andika'; 
+}
+.modal h1 {
+  font-size: 20px; 
+  font-weight: bold;
+}
+.modal h2 {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 90%;
+  }
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+.flex-item {
+  margin: 5px;
+  flex-grow:1;
 }
