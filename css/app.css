@@ -86,15 +86,20 @@ section {
   }
 }
 .thumbnail-container {
-  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 90%;
 }
 .thumbnail {
   display: flex;
   margin: 10px;
   width:200px;
-  clip: rect(0px,200px,200px,0px);
+  height:200px;
+  /*clip: rect(0px,200px,200px,0px);*/
+  object-fit: cover;
 }
-
 
 /* Modal */
 .modal p {
@@ -108,11 +113,11 @@ section {
   font-weight: bold;
 }
 .modal h2 {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
-  letter-spacing: 2px;
   text-transform: uppercase;
 }
+
 @media (min-width: 992px) {
   .modal-lg {
     max-width: 90%;
@@ -125,4 +130,45 @@ section {
 .flex-item {
   margin: 5px;
   flex-grow:1;
+  align-self: flex-start;
+}
+
+/* Customizing Carousel */
+.carousel-item img {
+  display:flex;
+  align-self: flex-start;
+}
+.flex-container .carousel {
+  width: 500px;
+}
+.carousel-item img {
+  object-fit: scale-down;
+}
+.carousel-caption p{
+  background-color: rgba(0,0,0,.7);
+  font-weight:bold;
+}
+.carousel ol {
+  bottom:0;
+  top:10px;
+} 
+
+.carousel-indicators li {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.carousel-indicators li.active {
+  background-color: black;
+}
+
+.control-custom {
+    display:inline-block;
+    margin: 10px;
+    border-radius: 60px;    
+    background-color:black;
+    padding: 5px 9px;   
+}
+.carousel-control-prev, .carousel-control-next {
+  color:white;
+  padding-top: 20px;
+  align-items: flex-start;
 }
