@@ -85,6 +85,16 @@ section {
     background-size: 90%;
   }
 }
+.thumbnail-container {
+  max-width: 800px;
+}
+.thumbnail {
+  display: flex;
+  margin: 10px;
+  width:200px;
+  clip: rect(0px,200px,200px,0px);
+}
+
 
 /* Modal */
 .modal p {
@@ -105,7 +115,7 @@ section {
 }
 @media (min-width: 992px) {
   .modal-lg {
-    width: 90%;
+    max-width: 90%;
   }
 }
 .flex-container {
