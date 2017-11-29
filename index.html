@@ -1,6 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kira prentice</title>
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69840407-3"></script>
     <script>
@@ -10,12 +14,16 @@
 
       gtag('config', 'UA-69840407-3');
     </script>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kira prentice</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+
     <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
 
@@ -24,8 +32,10 @@
     <nav>
       <ul class="menu" data-smooth-scroll>
         <li><a href="#about">about</a></li>
-        <li><a href="#work">work</a></li>
-        <li><a href="#blog">blog</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="work-page.html">work2</a></li>
+        <li><a href="work-nav.html">work3</a></li>
+        <!--<li><a href="#blog">blog</a></li>-->
       </ul>
     </nav>
 
@@ -65,9 +75,30 @@
       <div class="text-content">
         <h1>More to come...</h1>
         <p>This website is currently under construction. Feel free to drop me a line using the links below.</p>
-        <p><a href="https://twitter.com/classickira">twitter</a> | <a href="https://www.linkedin.com/in/kira-prentice-75369a6b">linkedin</a> | <a href="https://github.com/kiracp">github</a> | <a href="https://upload.wikimedia.org/wikipedia/commons/4/4e/Macaca_nigra_self-portrait_large.jpg">my face</a></p>
+        <p><a href="https://twitter.com/classickira">twitter</a> | <a href="https://www.linkedin.com/in/kira-prentice-75369a6b">linkedin</a> | <a href="https://github.com/kiracp">github</a> | <a data-toggle="modal" data-target=".validate">portfolio</a></p>
       </div>
     </section>
+
+        <!-- Modal with full descriptions -->
+    <div class="modal validate" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"><h1>Access portfolio</h1></div>
+          <div class="modal-body">
+            <div class="flex-container">
+              <div class="flex-item">
+                <form>
+                  <h2>Password</h2>
+                  <input id="password" type="text">
+                  <button id="submit" type="submit">Submit</button>
+                  </form>
+              </div>
+              <div class="flex-item">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/app.js"></script>

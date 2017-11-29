@@ -29,13 +29,16 @@
 
   </head>
   <body>
-    <nav>
+    <nav class="nav-white">
       <ul class="menu" data-smooth-scroll>
-        <li><a href="#about">about</a></li>
-        <li><a href="#work">work</a></li>
-        <li><a href="#blog">blog</a></li>
+        <li><a href="index.html">about</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="work-page.html">work2</a></li>
+        <li><a href="work-nav.html">work3</a></li>
       </ul>
     </nav>
+
+    <h1 style="margin-left:50px">Portfolio</h1>
 
     <!-- Thumbnails -->
     <div class="thumbnail-container">
@@ -46,16 +49,29 @@
 
       <img class="thumbnail" src="images/portfolio/potn1.png" alt="athenaValue Dashboard Wireframe" data-toggle="modal" data-target=".hppn">
 
-      <img class="thumbnail" src="images/portfolio/databoard1.png" alt="athenaValue Dashboard Wireframe" data-toggle="modal" data-target=".hppn">
+      <img class="thumbnail" src="images/portfolio/databoard1.png" alt="athenaValue Dashboard Wireframe" data-toggle="modal" data-target=".testy">
 
-      <img class="thumbnail" src="images/portfolio/adcdash1.png" alt="athenaValue Dashboard Wireframe" data-toggle="modal" data-target=".hppn">
+      <img class="thumbnail" src="images/portfolio/adcdash1.png" alt="athenaValue Dashboard Wireframe" data-toggle="modal" data-target=".test">
+
+      <img class="thumbnail" src="images/portfolio/claimsinfo.jpg" alt="Claims Process Infographic" data-toggle="modal" data-target="#claims">
+
+      <img class="thumbnail" src="images/portfolio/workflowevent1.png" alt="Claims Process Infographic" data-toggle="modal" data-target=".workflow">
+
+      <img class="thumbnail" src="images/portfolio/random.png" alt="Claims Process Infographic" data-toggle="modal" data-target=".random">
+
+      <img class="thumbnail" src="images/portfolio/sketching.png" alt="Claims Process Infographic" data-toggle="modal" data-target=".claims">
+
+      <img class="thumbnail" src="images/portfolio/pd.png" alt="Claims Process Infographic" data-toggle="modal" data-target=".claims">
+
+      <img class="thumbnail" src="images/portfolio/dashboardrepo.png" alt="Claims Process Infographic" data-toggle="modal" data-target=".claims">
+
+      <img class="thumbnail" src="images/portfolio/forge.png" alt="Claims Process Infographic" data-toggle="modal" data-target=".claims">
     </div>
 
 
     <!-- Modal with full descriptions -->
     <div class="modal hppn" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
-        
         <div class="modal-content">
           <div class="modal-header"><h1>athenaValue + HPPN Dashboards</h1></div>
           <div class="modal-body">
@@ -99,11 +115,31 @@
               </div>
           </div>
         </div>
+      </div>
+    </div>
 
+    <div class="modal" id="claims" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header"><h1>Life Cycle of a Claim Infographic</h1></div>
+          <div class="modal-body">
+            <div class="flex-container">
+              <div class="flex-item">
+                <img src="images/portfolio/claimsinfo.jpg" alt="Life Cycle of a Claim Infographic"></img>
+              </div>
+              <div class="flex-item">
+                <h2>Problem</h2>
+                <p>The claims process is complicated, and an infographic could help me (and others) understand it.</p>
+                <h2>Solution</h2>
+                <p>Compiled based on a presentation by Brent Evansen (Collector) and conversations with other Collector experts. Made for education! Posted on The Commons <a href="https://social.athenahealth.com/docs/DOC-3449">here</a>.</p>
+                <h2>Outcome</h2>
+                <p>Engagement! I learned a lot working to lay out the complicated claims process in a visually comprehensive way, and have heard of others using the infographic in their onboarding.</p>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <script src="js/vendor/jquery.js"></script>
-    <script src="js/app.js"></script>
   </body>
 </html>

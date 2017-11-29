@@ -8,3 +8,21 @@ function randomH1() {
   }
 }
 document.ready = randomH1();
+
+/* Form validation */
+$(document).ready(function () {
+    $("#submit").click(function () {
+        console.log("eeeyyy")
+        var pw = document.getElementById('password').value;
+        console.log(pw);
+        if (pw.length == 0) {
+            alert("Please input password");
+        }
+        else if  (pw == "password") {
+            window.location.replace = "work.html";
+        }
+        else {
+          alert("Incorrect password");
+        }
+    });
+});

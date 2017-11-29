@@ -1,16 +1,27 @@
+
 body {
-  margin: 0px 20px;
-  background-color: #5baddd;
   font-family: 'Andika', monospace;
+  display:flex;
+  min-height:100vh;
+  flex-direction:column;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Germania One', cursive;
   color: #F94A4B;
 }
+a, a:not([href]):not([tabindex]) {
+  color: #5baddd;
+  text-decoration: none;
+  font-weight:bold;
+}
+
+a:hover, a:not([href]):not([tabindex]):hover {
+  color: #F94A4B;
+}
 nav {
   display: flex;
   justify-content: flex-end;
-  background-color: #5baddd;
+  background-color:#5baddd;
 }
 nav ul {
   display: flex;
@@ -24,15 +35,23 @@ nav ul li {
 }
 nav ul a {
   color:white;
+}
+nav.top ul a {
   padding: 1rem 1.5rem;
   display: block;
   transition: all .25s ease-in-out;
 }
-nav ul li img {
+nav.top ul li img {
   width: 60%;
   display: block;
   padding: 1rem 1.5rem;
   transition: all .25s ease;
+}
+.nav-white {
+  background-color:white;
+}
+.nav-white a {
+  color: #444444;
 }
 header {
   background: url("../images/etc/kp-logo.png") center center/contain no-repeat;
@@ -44,6 +63,70 @@ header {
   transition: all .25s ease;
 }
 
+.flex-container {
+  width:100%;
+  display:flex;
+  flex:1;
+}
+.side {
+  position: fixed;
+  width:15em;
+  top: 0; 
+  left: 0;
+  flex: 1 0 15em;
+  order:-1;
+
+}
+.main {
+  flex:1 0 calc(100vw-15em);
+  margin-left:20px;
+}
+hr {
+  max-width: 100%;
+  margin-right: 50px;
+}
+
+@media (min-width: 768px) {
+  .flex-container {
+    flex-direction: row;
+    flex: 1;
+  }
+  .main {
+    flex: 1;
+  }
+  .side {
+    flex: 0 0 15em;
+  }
+}
+
+nav.side {
+
+  padding: 15px;
+  background: transparent;
+  font-size: 13px;
+  color:#333;
+}
+nav.side ul {
+  margin: 0;
+  display:block;
+  padding: 0;
+}
+nav.side ul li {
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  text-align: left;
+}
+nav.side ul a {
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: none;
+  color: black;
+}
+nav.side ul a:hover {
+  color:#F94A4B;
+  text-decoration: none;
+  font-weight: bold;
+}
 .hero{
   -ms-flex-align:center;
   align-items:center;
@@ -55,23 +138,49 @@ header {
   text-align: center;
   padding: 6em 0 3em;
 }
-
-a {
-  color: #5baddd;
-  text-decoration: none;
-  font-weight:bold;
+.main h1 {
+  font-size: 28px;
 }
-
-a:hover {
-  color: #F94A4B;
+.main h2 {
+  font-weight: bold;
+  color: #333;
+  text-transform:uppercase;
+  letter-spacing: 1px;
+  font-size: 15px;
+  padding-top: 10px;
+}
+.main p {
+  font-size: 14px;
+}
+.main p.quote {
+  color: #666;
+  max-width: 500px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: 15px;
+  font-style: italic;
+}
+.main img {
+  margin-bottom: 10px;
+}
+.case-study {
+  max-width: 850px;
 }
 .text-content {
   max-width: 600px;
   margin: 0 auto;
 }
+.portfolio-item {
+  width: 90%;
+  max-width:1000px;
+  margin: 0 auto;
+}
 section {
   padding: 8em 1em;
   border-bottom: 1px solid #ccc;
+}
+.sm {
+  padding: 4em 1em;
 }
 .white {
   background-color:#ffffff;
@@ -87,18 +196,34 @@ section {
 }
 .thumbnail-container {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 90%;
 }
 .thumbnail {
+  background-color:white;
   display: flex;
   margin: 10px;
-  width:200px;
+  width:300px;
   height:200px;
   /*clip: rect(0px,200px,200px,0px);*/
   object-fit: cover;
+}
+/* Flex Item */
+.portfolio-item p {
+  font-size: 13px;
+}
+.portfolio-item h2, h3, h4, h5, h6 { 
+  font-family: 'Andika'; 
+}
+.portfolio-item h1 {
+  color: #F94A4B;
+  font-size: 30px; 
+}
+.portfolio-item h2 {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* Modal */
@@ -109,6 +234,7 @@ section {
   font-family: 'Andika'; 
 }
 .modal h1 {
+  color: #F94A4B;
   font-size: 20px; 
   font-weight: bold;
 }
@@ -123,13 +249,31 @@ section {
     max-width: 90%;
   }
 }
-.flex-container {
+
+.item {
   display: flex;
   justify-content: center;
+  max-width:850px;
 }
-.flex-item {
-  margin: 5px;
-  flex-grow:1;
+.item .image-content{
+  flex: 0 0 15em;
+  order:-1;
+}
+.item .image-content img {
+  max-width: 400px;
+  object-fit:cover;
+  border: 1px solid #ccc;
+  padding: 4px;
+}
+.item .text-content {
+  border-bottom: 1px solid #ccc;
+}
+.item .text-content h2 {
+  padding-top: 5px;
+}
+.item .text-content{
+  margin-left: 15px;
+  flex: 1;
   align-self: flex-start;
 }
 
