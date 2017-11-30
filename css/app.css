@@ -66,19 +66,17 @@ header {
 .flex-container {
   width:100%;
   display:flex;
-  flex:1;
 }
 .side {
-  position: fixed;
-  width:15em;
-  top: 0; 
-  left: 0;
-  flex: 1 0 15em;
+  flex: 0 0 15em;
   order:-1;
-
+}
+.side-nav-wrapper {
+  position: fixed;
+  top: 50px; left: 20px;
 }
 .main {
-  flex:1 0 calc(100vw-15em);
+  flex:1 1;
   margin-left:20px;
 }
 hr {
@@ -160,9 +158,6 @@ nav.side ul a:hover {
   font-size: 15px;
   font-style: italic;
 }
-.main img {
-  margin-bottom: 10px;
-}
 .case-study {
   max-width: 850px;
 }
@@ -174,6 +169,16 @@ nav.side ul a:hover {
   width: 90%;
   max-width:1000px;
   margin: 0 auto;
+}
+figure {
+  margin-bottom:10px;
+  border: thin #ccc solid; 
+  padding:0.5em
+}
+figcaption {
+  font-size:12px;
+  color:#666;
+  border-top:thin #ccc solid;
 }
 section {
   padding: 8em 1em;
@@ -266,7 +271,7 @@ section {
   padding: 4px;
 }
 .item .text-content {
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
 }
 .item .text-content h2 {
   padding-top: 5px;

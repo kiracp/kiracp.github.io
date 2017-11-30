@@ -22,7 +22,9 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/ekko-lightbox.css">
     <link rel="stylesheet" href="css/app.css">
+
 
     <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
@@ -41,21 +43,24 @@
   <div class="flex-container">
 
     <nav class="side">
-      <ul>
-        <li>Case Studies</li>
-        <li><a href="#case1">Performance Dashboard</a></li>
-        <li><a href="#case2">Internal Analytics Databoards</a></li>
-        <li><a href="#case3">aDC Diversity Dashboard</a></li>
-        <li><a href="#case4">Strategic Design</a></li>
-        <hr>
-        <li>Portfolio Items</li>
-        <li><a href="#portfolio">UX Retreat Logos</a></li>
-        <li><a href="#portfolio">Claims Process Infographic</a></li>
-        <li><a href="#portfolio">Site Visit Notes</a></li>
-        <li><a href="#portfolio">Workflow Demo Event</a></li>
-        <li><a href="#portfolio">Live Dashboards Repository</a></li>
-      </ul>
+      <div class="side-nav-wrapper">
+        <ul>
+          <li>Case Studies</li>
+          <li><a href="#case1">Performance Dashboard</a></li>
+          <li><a href="#case2">Internal Analytics Databoards</a></li>
+          <li><a href="#case3">aDC Diversity Dashboard</a></li>
+          <li><a href="#case4">Strategic Design</a></li>
+          <hr>
+          <li>Portfolio Items</li>
+          <li><a href="#portfolio">UX Retreat Logos</a></li>
+          <li><a href="#portfolio">Claims Process Infographic</a></li>
+          <li><a href="#portfolio">Site Visit Notes</a></li>
+          <li><a href="#portfolio">Workflow Demo Event</a></li>
+          <li><a href="#portfolio">Live Dashboards Repository</a></li>
+        </ul>
+      </div>
     </nav>
+
 
     <div class="main">
       <div class="case-study" id="case1">
@@ -75,7 +80,10 @@
 
         <p>The overview metric information can be viewed in a table format, easier to scan for power users of Excel. Initial navigation to this view was through a link above the metric cards, which users could not find and “did not know existed”. Yikes! We implemented a toggle pattern, similar to the one present elsewhere in the dashboard to toggle between data displayed in a graph. This indicates an easy toggle between different views of the same data, without fear of navigating away from the dashboard.</p>
 
-        <img src="images/portfolio/PD_toggle.png" alt="Performance Dashboard toggle">
+        <figure>
+          <img class=scaled src="images/portfolio/PD_toggle.png" alt="Performance Dashboard toggle">
+          <figcaption>Pattern allows for toggling data view between tiles and table</figcaption>
+        </figure>
 
         <p>Discoverability of all 30 metrics in the dashboard is important: this added data is the biggest value added over the Sentinel Metrics Dashboard. Our original metric navigation, grouped in dropdowns, proved difficult to use. Although we conducted a card sort into these categories, there is enough variety between mental models that it proved difficult to select a grouping that was intuitive to all users.</p>
 
@@ -83,8 +91,16 @@
 
         <p>As a result, we redid the metric navigation to be a searchable dropdown including all metrics. This allows users to browse all the metrics with one click, and filter immediately if they are looking for a specific metric. User feedback was positive, calling it “easy” and facilitating the common behavior of “typically ... looking for one thing.”</p>
 
-        <img src="images/portfolio/PD_nav.png" alt="Performance Dashboard navigation change">
-        <img src="images/portfolio/PD_nav-process.png" alt="Performance Dashboard navigation change in progress">
+
+        <figure>
+          <img class=scaled src="images/portfolio/PD_nav.png" alt="Performance Dashboard navigation change">
+          <figcaption>Original navigation layout and solution, live in athenaNet</figcaption>
+        </figure>
+
+        <figure>
+          <img class=scaled src="images/portfolio/PD_nav-process.png" alt="Performance Dashboard navigation change in progress">
+          <figcaption>TODO: Change this image</figcaption>
+        </figure>
 
         <h2>Problem: UX Debt not prioritized</h2>
 
@@ -92,7 +108,11 @@
 
         <p>These tasks included refactoring how metrics rendered responsively based on window size, and fixing inconsistencies in metric display and spacing. Understanding the code base also helps me more effectively provide feedback to developers. For example, an Austin team utilizing our code base completed a UX debt story that was deprioritized on our backlog, with guidance on directory structure and global UI elements.</p>
 
-        <img src="images/portfolio/PD_ux-debt.png" alt="Performance Dashboard navigation change">
+        <figure>
+          <img class=scaled src="images/portfolio/PD_ux-debt.png" alt="Performance Dashboard UX Debt">
+          <figcaption>Communicating specific CSS changes to the team</figcaption>
+        </figure>
+
 
         <h2>Outcome: Optimistically entering Beta</h2>
         <p>As with many projects at athena, Performance Dashboard adoption has more to do with load times and data provided than it does with UX work. However, a cohesive dashboard with intuitive navigation, consistent data display and familiar interface elements will facilitate the transition from the Sentinel Metrics predecessor. I hope my work on this project will help us meet our goal of &lt;5% bounce rate after Beta release in 18.3.</p>
@@ -100,8 +120,48 @@
       <hr>
       <div class="case-study" id="case2">
         <h1>Case Study: Internal Analytics Databoards</h1>
-        <img src="images/portfolio/databoard1.png" alt="Performance Dashboard toggle" width="500px">
+        <p>The Analytics department wanted to set an example of systematically tracking performance of our own initiatives and to learn from them as a data-driven department. Solution? A dashboard!</p>
+
+        <p>This work started with a specific scope: tracking performance of the Automated Document Processing Services Machine Learning model. A data scientist working with the team had a dashboard spun up in RShiny, tracking some of the KPIs. However, to socialize this initiative, the dashboard was being shown at a board meeting. This prompted a UX audit, to make the information clearer and to provide a roadmap for future dashboard design.</p>
+
+        <h2>Problem: Information architecture is confusing</h2>
+        <p>The original RShiny dashboard was a collection of components and data that didn’t tell a clear story. The overview page contained some (not all) of the most important information, and graphs that were redundant to drill down pages. I revised the overview page to include a snapshot of relevant information, and the drill down pages to include the detailed data about each KPI being tracked. </p>
+
+        <figure>
+          <img class=scaled src="images/portfolio/databoard_initial.png" alt="Databoard Info Architecture">
+          <figcaption>Used Balsamiq to communicate dashboard organization to the team</figcaption>
+        </figure>
+
+        <h2>Opportunity: Utilizing Forge styling</h2>
+        <p>Early on, we realized that this work could inform a future vision of how data visualizations could look and feel in athenaNet. As a result, I mocked up work using the Forge design system. Though we weren’t utilizing React or Forge components, we were able to test the UI constraints and see what worked.</p>
+
+        <figure>
+          <img class=scaled src="images/portfolio/databoard1.png" alt="Databoard Forge styling" width="500px">
+          <figcaption>Worked out of the Forge sketch document to borrow elements and grid styling</figcaption>
+        </figure>
+
+        <h2>Problem: No experienced front-end developers</h2>
+        <p>Since the project was under pressure with light resourcing, I did a majority of the front-end implementation. This ended up accelerating development time, because I could ensure the databoard could follow the mockups and iterate based on technical feasibility in real-time.</p>
+        <p>For example, a mockup using the Forge template had a smaller screen size to accommodate iPads. When implemented, the laptops and monitors viewing the databoard had unused real estate. I redesigned the layout to utilize the whole screen.</p>
+
+        <figure>
+          <img class=scaled src="images/portfolio/databoard_iterate.png" alt="Databoard iteration">
+          <figcaption>Iterating on mockup work to support a wider layout in the final implementation</figcaption>
+        </figure>
+
+        <h2>Outcomes: Proceeding from Proof of Concept</h2>
+        <p>Our RShiny app was presented at a board meeting and received as a “big success.” Our databoard proved the value of a flexible, aggregate view of business success metrics. This kicked off the second phase of the project, creating a templated Tableau workbook to be distributed to all teams, adding in data-driven tracking as a definition of done. </p>
       </div> <!--Case studies-->
+      <hr>
+      <div class="case-study" id="case3">
+        <h1>aDC Diversity Dashboard</h1>
+        <p></p>
+        <figure>
+          <img class=scaled src="images/portfolio/databoard_iterate.png" alt="Databoard iteration">
+          <figcaption>Iterating on mockup work to support a wider layout in the final implementation</figcaption>
+        </figure>
+      </div> <!--Case studies-->
+
       <hr>
       <h1 id="portfolio"> Portfolio Items</h1>
       <div class="item">
@@ -206,7 +266,30 @@
         </div> 
       </div> -->
 
+      <script>
+      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+      </script>
+
+      <script>
+      $( document ).ready(function(){
+ 
+        // Sets up click behavior on all button elements with the alert class
+        // that exist in the DOM when the instruction was executed
+        $( "button.alert" ).on( "click", function() {
+            console.log( "A button with the alert class was clicked!" );
+        });
+     
+        // Now create a new button element with the alert class. This button
+        // was created after the click listeners were applied above, so it
+        // will not have the same click behavior as its peers
+        $( "<button class='alert'>Alert!</button>" ).appendTo( document.body );
+    });
+
     <script src="js/vendor/jquery.js"></script>
+    <script src="js/ekko-lightbox.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
